@@ -1,0 +1,188 @@
+/* Service Detail Page Styling */
+.service-detail-page {
+  background-color: #030712;
+  color: #f9fafb;
+  min-height: 100vh;
+}
+
+.service-hero-banner {
+  background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 50%),
+              radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.08), transparent 50%),
+              #030712;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.service-hero-img-wrap {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.service-hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 440px;
+  transition: transform 0.6s ease;
+}
+
+.service-hero-img-wrap:hover img {
+  transform: scale(1.03);
+}
+
+.service-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  border-radius: 9999px;
+  color: #60a5fa;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Feature & Deliverable Cards */
+.service-feature-card {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.6);
+}
+
+.service-feature-card:hover::before {
+  opacity: 1;
+}
+
+.service-icon-box {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  background: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+  font-size: 1.35rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+/* Workflow Step Card */
+.workflow-step-card {
+  background: rgba(17, 24, 39, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  position: relative;
+  height: 100%;
+}
+
+.workflow-step-num {
+  font-family: monospace;
+  font-size: 2rem;
+  font-weight: 800;
+  color: rgba(59, 130, 246, 0.35);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+/* Tech Tool Badge */
+.tech-tool-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1.1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.tech-tool-badge:hover {
+  background: rgba(37, 99, 235, 0.15);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* FAQ Accordion */
+.faq-accordion-item {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.faq-accordion-item.active {
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.faq-accordion-trigger {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-accordion-trigger:focus {
+  outline: none;
+}
+
+.faq-accordion-body {
+  padding: 0 1.5rem 1.25rem 1.5rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Consultation Sidebar */
+.consultation-card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 90px;
+}

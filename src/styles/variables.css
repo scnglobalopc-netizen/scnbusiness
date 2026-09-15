@@ -1,0 +1,14 @@
+:root {
+  --colorPrimary: #2d5ce3;
+  --colorSecondary: #1a3c9e;
+  --colorbglight: #f8f9fa;
+  --colorwhite: #ffffff;
+  --colordark: #262626;
+  --colorFooter: #323232;
+  --font-family: 'Rubik', sans-serif;
+  --transition-fast: all 0.3s ease;
+  --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 12px;
+}
