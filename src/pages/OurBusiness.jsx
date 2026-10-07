@@ -131,7 +131,7 @@
 //           </div>
 
 //           <div className="row g-4">
-//             {businessVerticals.map((item, index) => (
+//             {businessVerticals.map((item) => (
 //               <div className="col-lg-4 col-md-6" key={item.id}>
 //                 <div className="business-card attractive-card h-100 bg-dark text-white border border-secondary border-opacity-25 shadow-sm">
 //                   <div className="business-card-img-wrapper">
@@ -144,7 +144,7 @@
 //                     </Link>
 //                     <div className="position-absolute top-0 end-0 m-3">
 //                       <span className="badge bg-black text-white px-2 py-1 small rounded-pill opacity-75 border border-secondary">
-//                         Vertical #{index + 1}
+//                         Vertical #{item.id}
 //                       </span>
 //                     </div>
 //                   </div>
@@ -224,12 +224,12 @@ const businessVerticals = [
   {
     id: 2,
     slug: 'it-training',
-    title: 'SCN Global Training Institute',
+    title: 'SCN Global IT Training Institute',
     image: '/images/vertical_it_training.jpg',
-    alt: 'SCN Global Training Institute',
-    tagline: 'Skill Development, Technical & HR Training Programs',
+    alt: 'SCN Global IT Training Institute',
+    tagline: 'Skill Development & Technical Training Programs',
     description:
-      'Empowering students and working professionals with job-ready skills in Full Stack Web Development, Android App Development, UI/UX Design, SEO, Graphic Design, and practical HR training covering talent acquisition, payroll, and statutory compliance.',
+      'Empowering students and working professionals with job-ready tech skills in Full Stack Web Development, Android App Development, UI/UX Design, SEO, Graphic Design, and modern software engineering.',
   },
   {
     id: 3,
@@ -240,6 +240,16 @@ const businessVerticals = [
     tagline: 'Professional Growth & Soft Skills Mentorship',
     description:
       'Comprehensive soft skills training covering effective communication, corporate etiquette, leadership development, interview preparation, and confidence building for workplace success.',
+  },
+  {
+    id: 4,
+    slug: 'hr-training',
+    title: 'SCN Global HR Training Institute',
+    image: '/images/vertical_hr_training.jpg',
+    alt: 'SCN Global HR Training Institute',
+    tagline: 'Practical Human Resource Management Certification',
+    description:
+      'In-depth HR operational training on talent acquisition, payroll processing, statutory compliance, employee engagement, labor laws, and HR generalist functions.',
   },
   {
     id: 5,
@@ -357,7 +367,7 @@ function OurBusiness() {
 
           {/* Business Cards */}
           <div className="row g-4">
-            {businessVerticals.map((item, index) => (
+            {businessVerticals.map((item) => (
               <div className="col-lg-4 col-md-6" key={item.id}>
                 <div className="business-card attractive-card h-100 bg-dark text-white border border-secondary border-opacity-25 shadow-sm d-flex flex-column">
                   {/* Image */}
@@ -377,7 +387,7 @@ function OurBusiness() {
                     {/* Vertical Number */}
                     <div className="position-absolute top-0 end-0 m-3">
                       <span className="badge bg-black text-white px-2 py-1 small rounded-pill opacity-75 border border-secondary">
-                        Vertical #{index + 1}
+                        Vertical #{item.id}
                       </span>
                     </div>
                   </div>
