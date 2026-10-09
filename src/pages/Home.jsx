@@ -38,27 +38,13 @@ const businessOverview = [
   },
   {
     id: 2,
-    slug: 'it-training',
-    title: 'SCN Global IT Training Institute',
-    image: '/images/vertical_it_training.jpg',
-    desc: 'Job-oriented technical training in full-stack web development, SEO, and digital marketing.'
+    slug: 'training-institute',
+    title: 'SCN Global Training Institute',
+    image: '/images/vertical_training_institute.jpg',
+    desc: 'HR, IT and Personality Development training with hands-on projects, certification, and placement support.'
   },
   {
     id: 3,
-    slug: 'personality-development',
-    title: 'SCN Global Personality Training',
-    image: '/images/vertical_personality_training.jpg',
-    desc: 'Soft skills, corporate etiquette, public speaking, and confidence building for professionals.'
-  },
-  {
-    id: 4,
-    slug: 'hr-training',
-    title: 'SCN Global HR Training Institute',
-    image: '/images/vertical_hr_training.jpg',
-    desc: 'End-to-end practical HR generalist training, payroll, and recruitment certification.'
-  },
-  {
-    id: 5,
     slug: 'us-staffing',
     title: 'SCN Global U. S. Staffing',
     image: '/images/vertical_us_staffing.jpg',
@@ -66,28 +52,28 @@ const businessOverview = [
   },
 
   {
-    id: 6,
+    id: 4,
     slug: 'general-staffing',
     title: 'SCN Global General Staffing',
     image: '/images/vertical_general_staffing.jpg',
     desc: 'Temporary, contractual, and permanent workforce deployment for diverse industries.'
   },
   {
-    id: 7,
+    id: 5,
     slug: 'event-management',
     title: 'SCN Global Event Management',
     image: '/images/vertical_payroll_management.jpg',
     desc: 'Corporate events, trade shows, BTL promotions, exhibitions, custom exhibits, and MICE services.'
   },
   {
-    id: 8,
+    id: 6,
     slug: 'bpo-services',
     title: 'SCN Global BPO Services',
     image: '/images/vertical_bpo_services.jpg',
     desc: '24/7 Voice and non-voice customer support, inbound/outbound sales, and live help desk.'
   },
   {
-    id: 9,
+    id: 7,
     slug: 'real-estate',
     title: 'SCN Global Real Estate',
     image: '/images/vertical_real_estate.jpg',

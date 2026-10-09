@@ -1,0 +1,433 @@
+/* SCN Global Training Institute: merged HR + IT + Personality page.
+   Each program carries its own accent colour so the three stay distinct inside one page. */
+
+.ti-page {
+  --ti-hr: #2dd4bf;
+  --ti-it: #6ea8fe;
+  --ti-pd: #f2b84b;
+  --ti-panel: #0a0d14;
+  --ti-line: rgba(255, 255, 255, 0.11);
+  --ti-text: #e8ecf3;
+  --ti-muted: #9aa4b2;
+  --accent: #ffffff;
+  font-family: var(--font-family);
+}
+
+.ti-hr { --accent: var(--ti-hr); }
+.ti-it { --accent: var(--ti-it); }
+.ti-pd { --accent: var(--ti-pd); }
+
+.ti-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+
+.ti-page a:focus-visible,
+.ti-page summary:focus-visible {
+  outline: 2px solid var(--accent, #fff);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---------------- Hero ---------------- */
+.ti-hero {
+  padding: 64px 0 56px;
+  background:
+    radial-gradient(60% 70% at 85% 10%, rgba(110, 168, 254, 0.14), transparent 70%),
+    radial-gradient(50% 60% at 5% 90%, rgba(45, 212, 191, 0.09), transparent 70%),
+    #000;
+}
+
+.ti-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.ti-hero h1 {
+  font-size: clamp(2.1rem, 4.6vw, 3.5rem);
+  font-weight: 650;
+  line-height: 1.06;
+  letter-spacing: -0.032em;
+  margin: 0 0 20px;
+  max-width: 14em;
+}
+
+.ti-lead {
+  color: var(--ti-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 34em;
+  margin: 0 0 28px;
+}
+
+.ti-hero-tracks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+  max-width: 34em;
+}
+
+.ti-hero-tracks a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  color: var(--ti-text);
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.ti-hero-tracks a:hover {
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.ti-hero-tracks strong { display: block; font-weight: 600; font-size: 0.98rem; }
+.ti-hero-tracks small { display: block; color: var(--ti-muted); font-size: 0.85rem; margin-top: 2px; }
+
+/* Staggered trio of images: the memorable element of the page */
+.ti-collage {
+  position: relative;
+  aspect-ratio: 1 / 1.02;
+}
+
+.ti-collage-item {
+  position: absolute;
+  width: 70%;
+  display: block;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  animation: ti-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.ti-collage-item img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.ti-collage-item:nth-child(1) { top: 0; left: 0; animation-delay: 0.05s; z-index: 1; }
+.ti-collage-item:nth-child(2) { top: 31%; right: 0; animation-delay: 0.2s; z-index: 2; }
+.ti-collage-item:nth-child(3) { bottom: 0; left: 6%; animation-delay: 0.35s; z-index: 3; }
+
+.ti-collage-tag {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@keyframes ti-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+.ti-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 56px 0 0;
+  border-top: 1px solid var(--ti-line);
+}
+
+.ti-facts > div { padding: 22px 24px 0 0; }
+.ti-facts > div + div { padding-left: 24px; border-left: 1px solid var(--ti-line); }
+.ti-facts dt { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+.ti-facts dd { margin: 0; color: var(--ti-muted); font-size: 0.88rem; line-height: 1.55; }
+
+/* ---------------- Sticky section menu ---------------- */
+.ti-subnav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(0, 0, 0, 0.86);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--ti-line);
+  border-bottom: 1px solid var(--ti-line);
+}
+
+.ti-subnav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.ti-subnav ul::-webkit-scrollbar { display: none; }
+
+.ti-subnav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 14px;
+  white-space: nowrap;
+  color: var(--ti-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ti-subnav a:hover { color: #fff; }
+.ti-subnav a.is-active { color: #fff; border-bottom-color: var(--accent, #fff); }
+
+/* ---------------- Program sections ---------------- */
+.ti-track {
+  position: relative;
+  padding: 84px 0 76px;
+  scroll-margin-top: 54px;
+  border-bottom: 1px solid var(--ti-line);
+  background: radial-gradient(55% 45% at var(--glow-x, 12%) 0%, color-mix(in srgb, var(--accent) 11%, transparent), transparent 72%), #000;
+}
+
+.ti-track.is-flipped { --glow-x: 88%; }
+
+.ti-track-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.ti-track.is-flipped .ti-media { order: 2; }
+
+.ti-media {
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 7%, transparent), 0 24px 50px rgba(0, 0, 0, 0.5);
+}
+
+.ti-media img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+
+.ti-institute {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.ti-track h2 {
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-weight: 650;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  margin: 0 0 16px;
+}
+
+.ti-intro { color: var(--ti-muted); font-size: 1.02rem; line-height: 1.75; margin: 0 0 22px; max-width: 36em; }
+
+.ti-track blockquote {
+  margin: 0;
+  padding: 4px 0 4px 18px;
+  border-left: 3px solid var(--accent);
+  color: var(--ti-text);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  font-weight: 500;
+  max-width: 34em;
+}
+
+.ti-subhead {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 20px;
+  color: #fff;
+}
+
+.ti-programs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-bottom: 56px;
+}
+
+.ti-programs article { padding-top: 18px; border-top: 2px solid var(--accent); }
+.ti-programs h4 { font-size: 1.08rem; font-weight: 600; margin: 0 0 6px; line-height: 1.3; }
+.ti-programs p, .ti-modules p { margin: 0; color: var(--ti-muted); font-size: 0.9rem; line-height: 1.65; }
+.ti-programs .ti-tagline, .ti-modules .ti-tagline { color: var(--accent); font-weight: 500; margin-bottom: 8px; }
+
+.ti-modules {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.ti-modules article {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: var(--ti-panel);
+  border: 1px solid var(--ti-line);
+  border-radius: 14px;
+}
+
+.ti-modules h4 { font-size: 1rem; font-weight: 600; margin: 0 0 4px; line-height: 1.3; }
+
+.ti-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+.ti-proof {
+  list-style: none;
+  margin: 0;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--ti-line);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ti-proof li { display: flex; gap: 14px; align-items: flex-start; }
+.ti-proof i { color: var(--accent); font-size: 1.15rem; margin-top: 3px; width: 22px; text-align: center; }
+.ti-proof strong { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; }
+.ti-proof span { color: var(--ti-muted); font-size: 0.86rem; line-height: 1.6; }
+
+/* ---------------- Shared lower sections ---------------- */
+.ti-section { padding: 84px 0; }
+.ti-section-alt { background: var(--ti-panel); border-top: 1px solid var(--ti-line); border-bottom: 1px solid var(--ti-line); }
+.ti-section { scroll-margin-top: 54px; }
+
+.ti-section-head { max-width: 40em; margin-bottom: 44px; }
+.ti-section-head h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); font-weight: 650; letter-spacing: -0.025em; margin: 0 0 12px; }
+.ti-section-head p { color: var(--ti-muted); margin: 0; line-height: 1.7; }
+
+/* Learning path: a real sequence, so it is numbered */
+.ti-path {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  position: relative;
+}
+
+.ti-path::before {
+  content: '';
+  position: absolute;
+  top: 19px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ti-hr), var(--ti-it), var(--ti-pd));
+  opacity: 0.55;
+}
+
+.ti-step {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: #000;
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  font-weight: 700;
+}
+
+.ti-path h3 { font-size: 1.05rem; font-weight: 600; margin: 0 0 6px; }
+.ti-path p { margin: 0; color: var(--ti-muted); font-size: 0.9rem; line-height: 1.65; }
+
+/* Compare table */
+.ti-table-wrap { overflow-x: auto; border: 1px solid var(--ti-line); border-radius: 16px; background: #000; }
+.ti-table { width: 100%; min-width: 760px; border-collapse: collapse; }
+.ti-table th, .ti-table td { padding: 18px 20px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--ti-line); font-size: 0.9rem; line-height: 1.6; }
+.ti-table tbody tr:last-child th, .ti-table tbody tr:last-child td { border-bottom: 0; }
+.ti-table thead th { font-weight: 600; font-size: 1rem; white-space: nowrap; border-bottom: 2px solid var(--accent, var(--ti-line)); }
+.ti-table thead th .ti-dot { margin-right: 10px; }
+.ti-table tbody th { width: 150px; color: #fff; font-weight: 600; }
+.ti-table td { color: var(--ti-muted); }
+
+/* FAQ */
+.ti-faq { max-width: 52em; border-top: 1px solid var(--ti-line); }
+.ti-faq details { border-bottom: 1px solid var(--ti-line); }
+.ti-faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.ti-faq summary::-webkit-details-marker { display: none; }
+.ti-faq summary::after {
+  content: '+';
+  flex: none;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--ti-muted);
+  transition: transform 0.25s ease;
+}
+.ti-faq details[open] summary::after { transform: rotate(45deg); color: #fff; }
+.ti-faq details p { margin: 0 0 22px; color: var(--ti-muted); line-height: 1.75; max-width: 42em; }
+
+/* Closing CTA */
+.ti-cta { padding: 84px 0; border-top: 1px solid var(--ti-line); background: radial-gradient(60% 90% at 50% 0%, rgba(110, 168, 254, 0.12), transparent 70%), #000; }
+.ti-cta h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 650; letter-spacing: -0.02em; margin-bottom: 12px; }
+.ti-cta p { color: var(--ti-muted); max-width: 36em; margin: 0 auto 28px; line-height: 1.7; }
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 991px) {
+  .ti-hero-grid, .ti-track-head { grid-template-columns: 1fr; gap: 40px; }
+  .ti-track.is-flipped .ti-media { order: 0; }
+  .ti-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 8px; }
+  .ti-facts > div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .ti-programs, .ti-modules, .ti-proof { grid-template-columns: 1fr; }
+  .ti-path { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; }
+  .ti-path::before { display: none; }
+}
+
+@media (max-width: 575px) {
+  .ti-hero { padding: 40px 0; }
+  .ti-collage { aspect-ratio: auto; display: grid; gap: 14px; }
+  .ti-collage-item { position: relative; width: 100%; inset: auto !important; }
+  .ti-facts { grid-template-columns: 1fr; }
+  .ti-facts > div, .ti-facts > div + div { padding: 16px 0 0; border-left: 0; }
+  .ti-path { grid-template-columns: 1fr; }
+  .ti-track, .ti-section, .ti-cta { padding: 56px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ti-collage-item { animation: none; }
+  .ti-faq summary::after, .ti-hero-tracks a, .ti-subnav a { transition: none; }
+}

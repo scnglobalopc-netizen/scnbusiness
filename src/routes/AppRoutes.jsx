@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import About from '../pages/About';
 import OurBusiness from '../pages/OurBusiness';
 import BusinessDetail from '../pages/BusinessDetail';
+import TrainingInstitute from '../pages/TrainingInstitute';
 import AsEmployer from '../pages/AsEmployer';
 import AsEmployee from '../pages/AsEmployee';
 import Contact from '../pages/Contact';
@@ -21,6 +22,14 @@ function AppRoutes() {
       <Route path="/corporate-solutions" element={<Navigate to="/solutions" replace />} />
 
       <Route path="/our-business" element={<OurBusiness />} />
+
+      {/* Merged SCN Global Training Institute (HR + IT + Personality Development) */}
+      <Route path="/our-business/training-institute" element={<TrainingInstitute />} />
+      <Route path="/training-institute" element={<Navigate to="/our-business/training-institute" replace />} />
+      <Route path="/our-business/hr-training" element={<Navigate to="/our-business/training-institute#hr" replace />} />
+      <Route path="/our-business/it-training" element={<Navigate to="/our-business/training-institute#it" replace />} />
+      <Route path="/our-business/personality-development" element={<Navigate to="/our-business/training-institute#personality" replace />} />
+
       <Route path="/our-business/:slug" element={<BusinessDetail />} />
       
       <Route path="/service-detail/:slug" element={<ServiceDetail />} />
@@ -30,9 +39,9 @@ function AppRoutes() {
       {/* SCN Website Inner Page URL Compatibility */}
       <Route path="/it-service" element={<Navigate to="/our-business/it-services" replace />} />
       <Route path="/it-services" element={<Navigate to="/our-business/it-services" replace />} />
-      <Route path="/it-training-institute" element={<Navigate to="/our-business/it-training" replace />} />
-      <Route path="/personality-development-training" element={<Navigate to="/our-business/personality-development" replace />} />
-      <Route path="/hr-training-institute" element={<Navigate to="/our-business/hr-training" replace />} />
+      <Route path="/it-training-institute" element={<Navigate to="/our-business/training-institute#it" replace />} />
+      <Route path="/personality-development-training" element={<Navigate to="/our-business/training-institute#personality" replace />} />
+      <Route path="/hr-training-institute" element={<Navigate to="/our-business/training-institute#hr" replace />} />
       <Route path="/u-s-staffing" element={<Navigate to="/our-business/us-staffing" replace />} />
       <Route path="/event-management" element={<Navigate to="/our-business/event-management" replace />} />
       <Route path="/general-staffing" element={<Navigate to="/our-business/general-staffing" replace />} />

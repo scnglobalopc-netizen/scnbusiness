@@ -223,36 +223,16 @@ const businessVerticals = [
   },
   {
     id: 2,
-    slug: 'it-training',
-    title: 'SCN Global IT Training Institute',
-    image: '/images/vertical_it_training.jpg',
-    alt: 'SCN Global IT Training Institute',
-    tagline: 'Skill Development & Technical Training Programs',
+    slug: 'training-institute',
+    title: 'SCN Global Training Institute',
+    image: '/images/vertical_training_institute.jpg',
+    alt: 'SCN Global Training Institute: HR, IT and Personality Development training',
+    tagline: 'HR, IT & Personality Development Training Under One Roof',
     description:
-      'Empowering students and working professionals with job-ready tech skills in Full Stack Web Development, Android App Development, UI/UX Design, SEO, Graphic Design, and modern software engineering.',
+      'Job-oriented training in HR generalist & payroll, full-stack web & Android development, digital marketing, and personality development, with hands-on projects, certification, and placement support.',
   },
   {
     id: 3,
-    slug: 'personality-development',
-    title: 'SCN Global Personality Development Training',
-    image: '/images/vertical_personality_training.jpg',
-    alt: 'SCN Global Personality Development Training',
-    tagline: 'Professional Growth & Soft Skills Mentorship',
-    description:
-      'Comprehensive soft skills training covering effective communication, corporate etiquette, leadership development, interview preparation, and confidence building for workplace success.',
-  },
-  {
-    id: 4,
-    slug: 'hr-training',
-    title: 'SCN Global HR Training Institute',
-    image: '/images/vertical_hr_training.jpg',
-    alt: 'SCN Global HR Training Institute',
-    tagline: 'Practical Human Resource Management Certification',
-    description:
-      'In-depth HR operational training on talent acquisition, payroll processing, statutory compliance, employee engagement, labor laws, and HR generalist functions.',
-  },
-  {
-    id: 5,
     slug: 'us-staffing',
     title: 'SCN Global U. S. Staffing',
     image: '/images/vertical_us_staffing.jpg',
@@ -262,7 +242,7 @@ const businessVerticals = [
       'Specialized US staffing solutions providing US IT recruiters, Bench Sales recruiters, W2/C2C placement services, and technical talent acquisition for North American enterprises.',
   },
   {
-    id: 6,
+    id: 4,
     slug: 'general-staffing',
     title: 'SCN Global General Staffing',
     image: '/images/vertical_general_staffing.jpg',
@@ -272,7 +252,7 @@ const businessVerticals = [
       'Comprehensive general staffing across administrative, industrial, retail, and corporate operations tailored to meet seasonal and long-term organizational demands.',
   },
   {
-    id: 7,
+    id: 5,
     slug: 'event-management',
     title: 'SCN Global Event Management',
     image: '/images/vertical_payroll_management.jpg',
@@ -282,7 +262,7 @@ const businessVerticals = [
       'Complete event management solutions for corporate events, trade shows, BTL promotions, activation campaigns, exhibitions, custom exhibits, wedding management, and MICE services—delivering memorable experiences with precision and creativity.',
   },
   {
-    id: 8,
+    id: 6,
     slug: 'bpo-services',
     title: 'SCN Global BPO Services',
     image: '/images/vertical_bpo_services.jpg',
@@ -292,7 +272,7 @@ const businessVerticals = [
       '24/7 customer support center operations, tele-calling, back-office data processing, live chat support, and client relationship handling.',
   },
   {
-    id: 9,
+    id: 7,
     slug: 'real-estate',
     title: 'SCN Global Real Estate',
     image: '/images/vertical_real_estate.jpg',
